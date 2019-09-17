@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Idea]]></title>
-    <url>%2F2019%2F09%2F08%2FIdea%2F</url>
-    <content type="text"></content>
+    <title></title>
+    <url>%2F2019%2F09%2F07%2FIdea%E5%8D%81%E5%A4%A7%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[####1.快捷键 除了sout 也可以在输出变量的后面 str.sout 使用 12String str = &quot;测试打印!&quot;;System.out.println(str); ####2.快速定义局部变量 在字符串或者数字后面 .var 12String ss = &quot;sss&quot;;int i = 121; 3.快速定义成员变量 在值后面输入.field 如果方法是静态的自生成静态的变量1anInt = 1212; 4.快速格式化字符串 在字符串的后面加 .format12String sr = String.format(&quot;1211ssa&quot;, &quot;sda&quot;);System.out.println(sr); ####5. 快速判断(非空) 非空 .notnull 或者.nn 空 .null 123456if (sr != null) &#123; System.out.println(&quot;这个数句是非空&quot;);&#125;if (str == null) &#123; System.out.println(&quot;这个数据是空的!&quot;);&#125; ####6.快速取反判断 输入.not 可以快速取反 在输入.if 可以快速生成if 判断语句 1234boolean bn = false ;if (!bn) &#123;&#125; 7.快速遍历集合 .for .fori .forr1234567List list = new ArrayList&lt;String &gt;();for (Object o : list) &#123;&#125;for (int i1 = 0; i1 &lt; list.size(); i1++) &#123;&#125;for (int i1 = list.size() - 1; i1 &gt;= 0; i1--) &#123;&#125; 8.快速返还值 .return1// return &quot;ss&quot;; 9.快速生成同步锁 .synchronized123synchronized (obj) &#123;&#125; ####10.快速生成jdk8 语句 .Lambda 以及 Optional 12Runnable lambda = () -&gt; System.out.println(&quot;测试lambda&quot;);Optional.of(lambda);]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
