@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jvnote.github.io">
-  <title>Archives | GuoJing.Bk</title>
+  <title>Java 对象深拷贝 | GuoJing.Bk</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小人物,码农">
+  <meta name="description" content="##介绍在Java语言里，当我们需要拷贝一个对象时，有两种类型的拷贝：浅拷贝与深拷贝。浅拷贝只是拷贝了源对象的地址，所以源对象的值发生变化时，拷贝对象的值也会发生变化。而深拷贝则是拷贝了源对象的所有值，所以即使源对象的值发生变化时，拷贝对象的值也不会改变。如下图描述： ##拷贝对象 ####拷贝一个简单的对象 123456package text;public class User &amp;#123;">
 <meta name="keywords" content="博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GuoJing.Bk">
-<meta property="og:url" content="http://jvnote.github.io/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 对象深拷贝">
+<meta property="og:url" content="http://jvnote.github.io/2019/09/20/Java-对象深拷贝/index.html">
 <meta property="og:site_name" content="GuoJing.Bk">
-<meta property="og:description" content="小人物,码农">
+<meta property="og:description" content="##介绍在Java语言里，当我们需要拷贝一个对象时，有两种类型的拷贝：浅拷贝与深拷贝。浅拷贝只是拷贝了源对象的地址，所以源对象的值发生变化时，拷贝对象的值也会发生变化。而深拷贝则是拷贝了源对象的所有值，所以即使源对象的值发生变化时，拷贝对象的值也不会改变。如下图描述： ##拷贝对象 ####拷贝一个简单的对象 123456package text;public class User &amp;#123;">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-19T09:56:54.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GuoJing.Bk">
-<meta name="twitter:description" content="小人物,码农">
+<meta name="twitter:title" content="Java 对象深拷贝">
+<meta name="twitter:description" content="##介绍在Java语言里，当我们需要拷贝一个对象时，有两种类型的拷贝：浅拷贝与深拷贝。浅拷贝只是拷贝了源对象的地址，所以源对象的值发生变化时，拷贝对象的值也会发生变化。而深拷贝则是拷贝了源对象的所有值，所以即使源对象的值发生变化时，拷贝对象的值也不会改变。如下图描述： ##拷贝对象 ####拷贝一个简单的对象 123456package text;public class User &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="GuoJing.Bk" type="application/atom+xml">
   
@@ -164,37 +165,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java-对象深拷贝" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java 对象深拷贝
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/20/Java-对象深拷贝/" class="archive-article-date">
+
+        
+        <a href="/2019/09/20/Java-对象深拷贝/" class="archive-article-date">
   	<time datetime="2019-09-19T21:56:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/20/Java-对象深拷贝/">Java 对象深拷贝</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##介绍<br>在Java语言里，当我们需要拷贝一个对象时，有两种类型的拷贝：<strong>浅拷贝与深拷贝。</strong><br>浅拷贝只是拷贝了源对象的地址，所以源对象的值发生变化时，拷贝对象的值也会发生变化。<br>而深拷贝则是拷贝了源对象的所有值，所以即使源对象的值发生变化时，拷贝对象的值也不会改变。如下图描述：</p>
+<p>##拷贝对象</p>
+<p>####拷贝一个简单的对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">package text;</span><br><span class="line">public class User &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private Address address;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">package text;</span><br><span class="line">public class Address &#123;</span><br><span class="line">    private String city;</span><br><span class="line">    private String country;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，我们定义了一个User用户类，包含name姓名，和address地址，其中address并不是字符串，而是另一个Address类，包含country国家和city城市。构造方法和成员变量的get()、set()方法此处我们省略不写。接下来我们将详细描述如何深拷贝User对象。</p>
+<p>####方法一:构造函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class ConStructorCopy &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Address address = new Address(&quot;杭州&quot;, &quot;中国&quot;);</span><br><span class="line">        User user = new User(&quot;小明&quot;, address);</span><br><span class="line">        //调用构造函数用深拷贝</span><br><span class="line">        User copyUser = new User(user.getName(), new Address(address.getCity(), address.getCountry()));</span><br><span class="line">        // 修改源对象的值</span><br><span class="line">        user.getAddress().setCity(&quot;深圳&quot;);</span><br><span class="line">        // 检查两个对象的值不同</span><br><span class="line">        System.out.println(user.getAddress().getCity().equals(copyUser.getAddress().getCity()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果:</p>
+<p>####方法二 : 重载clone() 方法<br>Object父类有个clone()的拷贝方法，不过它是protected类型的，我们需要重写它并修改为public类型。<br>除此之外，子类还需要实现Cloneable接口来告诉JVM这个类是可以拷贝的。</p>
+<p>#####重写代码<br>让我们修改一下User类，Address类，实现Cloneable接口，使其支持深拷贝。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 地址</span><br><span class="line"> */</span><br><span class="line">public class Address implements Cloneable &#123;</span><br><span class="line">    private String city;</span><br><span class="line">    private String country;</span><br><span class="line">    @Override</span><br><span class="line">    public Address clone() throws CloneNotSupportedException &#123;</span><br><span class="line">        return (Address) super.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 用户</span><br><span class="line"> */</span><br><span class="line">public class User implements Cloneable &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private Address address;</span><br><span class="line">    @Override</span><br><span class="line">    public User clone() throws CloneNotSupportedException &#123;</span><br><span class="line">        User user = (User) super.clone();</span><br><span class="line">        user.setAddress(this.address.clone());</span><br><span class="line">        return user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，super.clone()其实是浅拷贝，所以在重写User类的clone()方法时，address对象需要调用address.clone()重新赋值。</p>
+<p>#####测试用例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void cloneCopy() throws CloneNotSupportedException &#123;</span><br><span class="line">        Address address = new Address(&quot;杭州&quot;, &quot;中国&quot;);</span><br><span class="line">        User user = new User(&quot;大山&quot;, address);</span><br><span class="line">        // 调用clone()方法进行深拷贝</span><br><span class="line">        User copyUser = user.clone();</span><br><span class="line">        // 修改源对象的值</span><br><span class="line">        user.getAddress().setCity(&quot;深圳&quot;);</span><br><span class="line">        // 检查两个对象的值不同</span><br><span class="line">        assertNotSame(user.getAddress().getCity(), copyUser.getAddress().getCity());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>####方法三 Apache Commons Lang 序列化<br>Java提供了序列化的能力，我们可以先将源对象进行序列化，再反序列化生成拷贝对象。但是，使用序列化的前提是拷贝的类（包括其成员变量）需要实现Serializable接口。Apache Commons Lang包对Java序列化进行了封装，我们可以直接使用它。</p>
+<p>#####重写代码<br>让我们修改一下User类，Address类，实现Serializable接口，使其支持序列化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import java.io.Serializable;</span><br><span class="line">public class Address implements Serializable &#123;</span><br><span class="line">    private String city;</span><br><span class="line">    private String country;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import java.io.Serializable;</span><br><span class="line">public class User implements Serializable &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private Address address;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>####测试用例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void serializableCopy() &#123;</span><br><span class="line">        Address address = new Address(&quot;杭州&quot;, &quot;中国&quot;);</span><br><span class="line">        User user = new User(&quot;大山&quot;, address);</span><br><span class="line">        // 使用Apache Commons Lang序列化进行深拷贝</span><br><span class="line">        User copyUser = (User) SerializationUtils.clone(user);</span><br><span class="line">        // 修改源对象的值</span><br><span class="line">        user.getAddress().setCity(&quot;深圳&quot;);</span><br><span class="line">        // 检查两个对象的值不同</span><br><span class="line">        assertNotSame(user.getAddress().getCity(), copyUser.getAddress().getCity());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>####方法四 :Gson 序列化<br>Gson可以将对象序列化成JSON，也可以将JSON反序列化成对象，所以我们可以用它进行深拷贝。</p>
+<p>####测试用例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void gsonCopy()&#123;</span><br><span class="line">        Address address=new Address(&quot;杭州&quot;,&quot;中国&quot;);</span><br><span class="line">        User user=new User(&quot;大山&quot;,address);</span><br><span class="line">        // 使用Gson序列化进行深拷贝</span><br><span class="line">        Gson gson=new Gson();</span><br><span class="line">        User copyUser=gson.fromJson(gson.toJson(user),User.class);</span><br><span class="line">        // 修改源对象的值</span><br><span class="line">        user.getAddress().setCity(&quot;深圳&quot;);</span><br><span class="line">        // 检查两个对象的值不同</span><br><span class="line">        assertNotSame(user.getAddress().getCity(),copyUser.getAddress().getCity());</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法五-Jackson序列化"><a href="#方法五-Jackson序列化" class="headerlink" title="方法五 Jackson序列化"></a>方法五 Jackson序列化</h4><p>Jackson与Gson相似，可以将对象序列化成JSON，明显不同的地方是拷贝的类（包括其成员变量）需要有默认的无参构造函数。</p>
+<p>#####重写代码<br>让我们修改一下User类，Address类，实现默认的无参构造函数，使其支持Jackson。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException;</span><br><span class="line">public class User &#123;</span><br><span class="line"> private String name;</span><br><span class="line">  private Address address;</span><br><span class="line"> // constructors, getters and setters</span><br><span class="line"> public User() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 地址</span><br><span class="line"> */</span><br><span class="line">public class Address &#123;</span><br><span class="line">    private String city;</span><br><span class="line">    private String country;</span><br><span class="line">    // constructors, getters and setters</span><br><span class="line">    public Address() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>#####测试用例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void jacksonCopy() throws IOException &#123;</span><br><span class="line">    Address address = new Address(&quot;杭州&quot;, &quot;中国&quot;);</span><br><span class="line">    User user = new User(&quot;大山&quot;, address);</span><br><span class="line">    // 使用Jackson序列化进行深拷贝</span><br><span class="line">    ObjectMapper objectMapper = new ObjectMapper();</span><br><span class="line">    User copyUser = objectMapper.readValue(objectMapper.writeValueAsString(user), User.class);</span><br><span class="line">    // 修改源对象的值</span><br><span class="line">    user.getAddress().setCity(&quot;深圳&quot;);</span><br><span class="line">    // 检查两个对象的值不同</span><br><span class="line">    assertNotSame(user.getAddress().getCity(), copyUser.getAddress().getCity());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>###总结<br>最简单的判断就是根据拷贝的类（包括其成员变量）是否提供了深拷贝的构造函数、是否实现了Cloneable接口、是否实现了Serializable接口、是否实现了默认的无参构造函数来进行选择。如果需要详细的考虑，则可以参考下面的表格：</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/zhifu_s1.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/weixin_s1.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -207,207 +282,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://jvnote.github.io/2019/09/20/Java-对象深拷贝/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/20/让代码性能更高/" class="archive-article-date">
-  	<time datetime="2019-09-19T21:55:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/20/让代码性能更高/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">让代码性能更高</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/20/让代码性能更高/">让代码性能更高</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/20/让代码更优雅/" class="archive-article-date">
-  	<time datetime="2019-09-19T21:48:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/20/让代码更优雅/">让代码更优雅</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/20/让代码远离-bug/" class="archive-article-date">
-  	<time datetime="2019-09-19T21:46:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/20/让代码远离-bug/">让代码远离 bug</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/17/Idea十大快捷键/" class="archive-article-date">
-  	<time datetime="2019-09-17T15:32:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/17/Idea十大快捷键/">IDea 十大快捷键</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/17/MySQL-开发规范/" class="archive-article-date">
-  	<time datetime="2019-09-17T15:32:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/17/MySQL-开发规范/">MySQL 开发规范</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -430,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
