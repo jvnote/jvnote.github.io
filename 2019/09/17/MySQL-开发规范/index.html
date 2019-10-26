@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="GuoJing.Bk">
 <meta property="og:description" content="一、数据库命令规范1.、所有数据库对象名称必须使用小写字母并用下划线分割1.、所有数据库对象名称禁止使用mysql保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）3.、数据库对象的命名要能做到见名识意，并且最后不要超过32个字符4.、临时库表必须以tmp_为前缀并以日期为后缀，备份表必须以bak_为前缀并以日期(时间戳)为后缀5.、所有存储相同数据的列名和列类型必须一致（一般作为关">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-17T05:46:25.910Z">
+<meta property="og:updated_time" content="2019-10-26T01:49:27.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 开发规范">
 <meta name="twitter:description" content="一、数据库命令规范1.、所有数据库对象名称必须使用小写字母并用下划线分割1.、所有数据库对象名称禁止使用mysql保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）3.、数据库对象的命名要能做到见名识意，并且最后不要超过32个字符4.、临时库表必须以tmp_为前缀并以日期为后缀，备份表必须以bak_为前缀并以日期(时间戳)为后缀5.、所有存储相同数据的列名和列类型必须一致（一般作为关">
@@ -186,6 +186,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、数据库命令规范"><a href="#一、数据库命令规范" class="headerlink" title="一、数据库命令规范"></a>一、数据库命令规范</h3><p>1.、所有数据库对象名称必须使用小写字母并用下划线分割<br>1.、所有数据库对象名称禁止使用mysql保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）<br>3.、数据库对象的命名要能做到见名识意，并且最后不要超过32个字符<br>4.、临时库表必须以tmp_为前缀并以日期为后缀，备份表必须以bak_为前缀并以日期(时间戳)为后缀<br>5.、所有存储相同数据的列名和列类型必须一致（一般作为关联列，如果查询时关联列类型不一致会自动进行数据类型隐式转换，会造成列上的索引失效，导致查询效率降低）</p>
+<a id="more"></a>
 <h3 id="二、数据库基本设计规范"><a href="#二、数据库基本设计规范" class="headerlink" title="二、数据库基本设计规范"></a>二、数据库基本设计规范</h3><p>1、所有表必须使用Innodb存储引擎<br>没有特殊要求（即Innodb无法满足的功能如：列存储，存储空间数据等）的情况下，所有表必须使用Innodb存储引擎（mysql5.5之前默认使用Myisam，5.6以后默认的为Innodb）Innodb 支持事务，支持行级锁，更好的恢复性，高并发下性能更好</p>
 <p>2、数据库和表的字符集统一使用UTF8<br>兼容性更好，统一字符集可以避免由于字符集转换产生的乱码，不同的字符集进行比较前需要进行转换会造成索引失效</p>
 <p>3、所有表和字段都需要添加注释<br>使用comment从句添加表和列的备注 从一开始就进行数据字典的维护</p>
@@ -482,27 +483,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://e867cdc8.wiz03.com/share/s/3EpYT81FPkFQ2BHCAt3FExfz2cAYjv2guAEA2JbblM3yNuRL" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/c8a9c66c-d1f7-4538-8373-0da4982bccac" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/a751be95-9f1b-4d06-b0b5-70b3a4c8eba7" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
         </ul>

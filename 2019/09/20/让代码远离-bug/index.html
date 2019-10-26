@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="GuoJing.Bk">
 <meta property="og:description" content="禁止使用构造方法 BigDecimal(double)BigDecimal(double) 存在精度损失风险，在精确计算或值比较的场景中可能会导致业务逻辑异常。 反例： 1BigDecimal value = new BigDecimal(0.1D); // 0.100000000000000005551115...  正例： 1BigDecimal value = BigDecimal.valu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-19T09:47:14.504Z">
+<meta property="og:updated_time" content="2019-10-26T01:49:59.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让代码远离 bug">
 <meta name="twitter:description" content="禁止使用构造方法 BigDecimal(double)BigDecimal(double) 存在精度损失风险，在精确计算或值比较的场景中可能会导致业务逻辑异常。 反例： 1BigDecimal value = new BigDecimal(0.1D); // 0.100000000000000005551115...  正例： 1BigDecimal value = BigDecimal.valu">
@@ -193,6 +193,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BigDecimal value = BigDecimal.valueOf(0.1D);; // 0.1</span><br></pre></td></tr></table></figure>
 
 <h4 id="返回空数组和空集合而不是-null"><a href="#返回空数组和空集合而不是-null" class="headerlink" title="返回空数组和空集合而不是 null"></a>返回空数组和空集合而不是 null</h4><p>返回 null ，需要调用方强制检测 null ，否则就会抛出空指针异常。返回空数组或空集合，有效地避免了调用方因为未检测 null 而抛出空指针异常，还可以删除调用方检测 null 的语句使代码更简洁。</p>
+<a id="more"></a>
+
 <p>反例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public static Result[] getResults() &#123;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static List&lt;Result&gt; getResultList() &#123;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static Map&lt;String, Result&gt; getResultMap() &#123;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    Result[] results = getResults();</span><br><span class="line">    if (results != null) &#123;</span><br><span class="line">        for (Result result : results) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    List&lt;Result&gt; resultList = getResultList();</span><br><span class="line">    if (resultList != null) &#123;</span><br><span class="line">        for (Result result : resultList) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Result&gt; resultMap = getResultMap();</span><br><span class="line">    if (resultMap != null) &#123;</span><br><span class="line">        for (Map.Entry&lt;String, Result&gt; resultEntry : resultMap) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -468,27 +470,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://e867cdc8.wiz03.com/share/s/3EpYT81FPkFQ2BHCAt3FExfz2cAYjv2guAEA2JbblM3yNuRL" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/c8a9c66c-d1f7-4538-8373-0da4982bccac" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/a751be95-9f1b-4d06-b0b5-70b3a4c8eba7" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
         </ul>

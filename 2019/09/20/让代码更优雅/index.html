@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://jvnote.github.io">
   <title>让代码更优雅 | GuoJing.Bk</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="长整型常量后添加大写 L在使用长整型常量值时，后面需要添加 L ，必须是大写的 L不能是小写的 l ，小写 l 容易跟数字 1 混淆而造成误解。 反例： 12long value = 1l;long max = Math.max(1L, 5);  正例： 12long value = 1L;long max = Math.max(1L, 5L);  不要使用魔法值当你编写一段代码时，使用魔法值可能">
+  <meta name="description" content="长整型常量后添加大写 L在使用长整型常量值时，后面需要添加 L ，必须是大写的 L不能是小写的 l ，小写 l 容易跟数字 1 混淆而造成误解。 反例： 12long value = 1l;long max = Math.max(1L, 5);  正例： 12long value = 1L;long max = Math.max(1L, 5L);">
 <meta name="keywords" content="博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="让代码更优雅">
 <meta property="og:url" content="http://jvnote.github.io/2019/09/20/让代码更优雅/index.html">
 <meta property="og:site_name" content="GuoJing.Bk">
-<meta property="og:description" content="长整型常量后添加大写 L在使用长整型常量值时，后面需要添加 L ，必须是大写的 L不能是小写的 l ，小写 l 容易跟数字 1 混淆而造成误解。 反例： 12long value = 1l;long max = Math.max(1L, 5);  正例： 12long value = 1L;long max = Math.max(1L, 5L);  不要使用魔法值当你编写一段代码时，使用魔法值可能">
+<meta property="og:description" content="长整型常量后添加大写 L在使用长整型常量值时，后面需要添加 L ，必须是大写的 L不能是小写的 l ，小写 l 容易跟数字 1 混淆而造成误解。 反例： 12long value = 1l;long max = Math.max(1L, 5);  正例： 12long value = 1L;long max = Math.max(1L, 5L);">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-19T09:58:02.127Z">
+<meta property="og:updated_time" content="2019-10-26T01:49:40.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让代码更优雅">
-<meta name="twitter:description" content="长整型常量后添加大写 L在使用长整型常量值时，后面需要添加 L ，必须是大写的 L不能是小写的 l ，小写 l 容易跟数字 1 混淆而造成误解。 反例： 12long value = 1l;long max = Math.max(1L, 5);  正例： 12long value = 1L;long max = Math.max(1L, 5L);  不要使用魔法值当你编写一段代码时，使用魔法值可能">
+<meta name="twitter:description" content="长整型常量后添加大写 L在使用长整型常量值时，后面需要添加 L ，必须是大写的 L不能是小写的 l ，小写 l 容易跟数字 1 混淆而造成误解。 反例： 12long value = 1l;long max = Math.max(1L, 5);  正例： 12long value = 1L;long max = Math.max(1L, 5L);">
   
     <link rel="alternative" href="/atom.xml" title="GuoJing.Bk" type="application/atom+xml">
   
@@ -192,6 +192,7 @@
 <p>正例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">long value = 1L;</span><br><span class="line">long max = Math.max(1L, 5L);</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
 <h4 id="不要使用魔法值"><a href="#不要使用魔法值" class="headerlink" title="不要使用魔法值"></a>不要使用魔法值</h4><p>当你编写一段代码时，使用魔法值可能看起来很明确，但在调试时它们却不显得那么明确了。这就是为什么需要把魔法值定义为可读取常量的原因。但是，-1、0 和 1不被视为魔法值。</p>
 <p>反例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; 100; i++)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">if (a == 100) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -527,27 +528,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://e867cdc8.wiz03.com/share/s/3EpYT81FPkFQ2BHCAt3FExfz2cAYjv2guAEA2JbblM3yNuRL" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/c8a9c66c-d1f7-4538-8373-0da4982bccac" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/a751be95-9f1b-4d06-b0b5-70b3a4c8eba7" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
         </ul>

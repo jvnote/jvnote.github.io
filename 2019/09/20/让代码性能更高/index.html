@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="GuoJing.Bk">
 <meta property="og:description" content="一.Map主键取值方法当循环中只需要 Map 的主键时，迭代 keySet() 是正确的。但是，当需要主键和取值时，迭代 entrySet() 才是更高效的做法，比先迭代 keySet() 后再去 get 取值性能更佳。 创建Map1234Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;String ,String&amp;gt;();        for">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-19T09:58:13.802Z">
+<meta property="og:updated_time" content="2019-10-26T01:49:02.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让代码性能更高">
 <meta name="twitter:description" content="一.Map主键取值方法当循环中只需要 Map 的主键时，迭代 keySet() 是正确的。但是，当需要主键和取值时，迭代 entrySet() 才是更高效的做法，比先迭代 keySet() 后再去 get 取值性能更佳。 创建Map1234Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;String ,String&amp;gt;();        for">
@@ -188,6 +188,7 @@
         <h4 id="一-Map主键取值方法"><a href="#一-Map主键取值方法" class="headerlink" title="一.Map主键取值方法"></a>一.Map主键取值方法</h4><p>当循环中只需要 Map 的主键时，迭代 keySet() 是正确的。但是，当需要主键和取值时，迭代 entrySet() 才是更高效的做法，比先迭代 keySet() 后再去 get 取值性能更佳。</p>
 <h6 id="创建Map"><a href="#创建Map" class="headerlink" title="创建Map"></a>创建Map</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String ,String&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2000000</span>; i++) &#123;</span><br><span class="line">            map.put(<span class="string">"测试"</span>+i ,<span class="string">"测试"</span>+i);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
 <h6 id="普遍的遍历方法-性能差"><a href="#普遍的遍历方法-性能差" class="headerlink" title="普遍的遍历方法 性能差"></a>普遍的遍历方法 性能差</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String key : map.keySet()) &#123;</span><br><span class="line">           String value = map.get(key);</span><br><span class="line">          <span class="comment">// System.out.println(value);</span></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
 
 <h6 id="正确的遍历方法"><a href="#正确的遍历方法" class="headerlink" title="正确的遍历方法"></a>正确的遍历方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;</span><br><span class="line">            String key = entry.getKey();</span><br><span class="line">            String value = entry.getValue();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
@@ -468,27 +469,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://e867cdc8.wiz03.com/share/s/3EpYT81FPkFQ2BHCAt3FExfz2cAYjv2guAEA2JbblM3yNuRL" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/c8a9c66c-d1f7-4538-8373-0da4982bccac" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://www.wiz.cn/wapp/pages/wdj/a751be95-9f1b-4d06-b0b5-70b3a4c8eba7" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
         </ul>
